@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chessboard Game</title>
+    <link rel="stylesheet" type="text/css" href="chessboard.css">
+</head>
+<body>
+    <div class="chessboard">
+        <script>
+            for (let row = 1; row <= 8; row++) {
+                let currentRow = document.createElement('div');
+                currentRow.className = 'row';
+
+                for (let col = 1; col <= 8; col++) {
+                    let square = document.createElement('div');
+                    square.className = (row + col) % 2 === 0 ? 'square light' : 'square dark';
+                    currentRow.appendChild(square);
+                }
+
+                document.querySelector('.chessboard').appendChild(currentRow);
+            }
+        </script>
+    </div>
+</body>
+</html>
